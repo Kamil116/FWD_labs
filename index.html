@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #my-photo {
+            border-radius: 15px;
+            overflow: hidden;
+            width: 250px;
+
+            /* centering the image */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .heading {
+            padding-left: 5em;
+        }
+
+        .text {
+            font-size: large;
+            padding-left: 3em;
+        }
+
+        #gh-link, #email, #tg-link {
+            width: 80px;
+        }
+
+        #tg-link {
+            border-radius: 50%;
+        }
+
+        #beginning {
+            background-color: antiquewhite;
+            padding-top: 1px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        #middle {
+            background-color: honeydew;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        #ending {
+            background-color: lavender;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .images {
+            width: 400px;
+            height: 250px;
+            padding-left: 4em;
+        }
+    </style>
+</head>
+
+<body>
+<div id="beginning">
+    <h1 style="text-align: center;">Kamil Mirgasimov</h1>
+    <img id="my-photo" src="./my_photo.jpg" alt="my-photo">
+</div>
+
+<div id="middle">
+    <h1 class="heading">Hi there!</h1>
+    <p class="text">I am second year bachelor student at <a href="https://innopolis.university">Innopolis university</a>
+    </p>
+    <img src="innopolis.jpeg" class="images" alt="image of the Innopolis university">
+    <hr>
+
+
+    <h1 class="heading">List of my projects</h1>
+    <ul class="text">
+        <li><a href='https://github.com/Kamil116/FilmsApplication'>Films application.</a> Main functionality is to fetch
+            information about films.
+        </li>
+        <li><a href="https://github.com/Kamil116/scheduler-backend_final">Telegram bot</a> for getting notifications
+            about the studying schedule. It also includes daily, weekly and monthly schedules.
+        </li>
+        <li><a href="https://github.com/Kamil116/liceyproject">Web-site</a> for storing passwords</li>
+    </ul>
+    <img src="FilmsApllication_screenshot.png" alt="My iOS project" class="images">
+    <hr>
+
+    <h1 class="heading">Skills</h1>
+    <ul class="text">
+        <li>Programming languages:
+            <ul>
+                <li>Python (web, telegram bots development + a little bit of ML)</li>
+                <li>Basics of C, C++, Java</li>
+                <li>iOS development with Swift</li>
+            </ul>
+        </li>
+        <li>Databases:
+            <ul>
+                <li>PostgreSQL, MongoDB</li>
+            </ul>
+        </li>
+
+
+    </ul>
+    <img src="Python-logopng.png" class="images" alt="Python logo">
+    <img src="swift-svgrepo-com.svg" class="images" alt="Swift logo">
+    <hr>
+</div>
+
+
+<div id="ending">
+    <h1 class="heading">How to reach me out:</h1>
+
+    <div style="padding-left: 8em">
+        <a href="https://t.me/mirgasimovk">
+            <img src="telegram.png" id="tg-link" alt="telegram contact">
+        </a>
+        <a href="https://github.com/Kamil116">
+            <img src="github-mark.png" id="gh-link" alt="github link">
+        </a>
+        <a href="mailto:k.mirgasimov@innopolis.university">
+            <img src="email-svgrepo-com.svg" id="email" alt="email">
+        </a>
+    </div>
+
+</div>
+</body>
+</html>
