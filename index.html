@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <title>My portfolio</title>
+    <link rel="stylesheet" href="navigation.css">
     <style>
         body {
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -14,8 +16,7 @@
 
             /* centering the image */
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
         .heading {
@@ -29,6 +30,10 @@
 
         #gh-link, #email, #tg-link {
             width: 80px;
+        }
+
+        #gh-link, #email {
+            margin-left: 30px;
         }
 
         #tg-link {
@@ -59,10 +64,26 @@
             height: 250px;
             padding-left: 4em;
         }
+
+        #footer-links {
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
+<div class="topnav">
+    <div>
+        <a class="active" href="index.html">Lab 1: about me</a>
+    </div>
+    <div>
+        <a href="jokes.html">Lab 2: jokes</a>
+    </div>
+    <div>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Coming soon...</a>
+    </div>
+</div>
+
 <div id="beginning">
     <h1 style="text-align: center;">Kamil Mirgasimov</h1>
     <img id="my-photo" src="./my_photo.jpg" alt="my-photo">
@@ -115,16 +136,22 @@
 <div id="ending">
     <h1 class="heading">How to reach me out:</h1>
 
-    <div style="padding-left: 8em">
-        <a href="https://t.me/mirgasimovk">
-            <img src="telegram.png" id="tg-link" alt="telegram contact">
-        </a>
-        <a href="https://github.com/Kamil116">
-            <img src="github-mark.png" id="gh-link" alt="github link">
-        </a>
-        <a href="mailto:k.mirgasimov@innopolis.university">
-            <img src="email-svgrepo-com.svg" id="email" alt="email">
-        </a>
+    <div style="padding-left: 8em" id="footer-links">
+        <div>
+            <a href="https://t.me/mirgasimovk">
+                <img src="telegram.png" id="tg-link" alt="telegram contact">
+            </a>
+        </div>
+        <div>
+            <a href="https://github.com/Kamil116">
+                <img src="github-mark.png" id="gh-link" alt="github link">
+            </a>
+        </div>
+        <div>
+            <a href="mailto:k.mirgasimov@innopolis.university">
+                <img src="email-svgrepo-com.svg" id="email" alt="email">
+            </a>
+        </div>
     </div>
 
 </div>

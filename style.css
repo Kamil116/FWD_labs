@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#get-joke-btn {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 24px;
+    padding: 2px 10px 2px 10px;
+    box-shadow: darkgray 2px 2px 2px 2px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#get-joke-btn:active {
+    transform: scale(0.95);
+    box-shadow: darkgray 1px 1px 10px 2px;
+}
+
+#main-content {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
