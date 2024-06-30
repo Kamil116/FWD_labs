@@ -1,8 +1,4 @@
-//
-// getJokeBtn.addEventListener('click', async function (e) {
-//     const joke = await fetchSomeJoke();
-//     handleOnePartJoke(joke);
-// });
+// !!! This javascript file is being used only for the second lab's task
 
 const getJokeBtn = document.getElementById('get-joke-btn');
 const joke_title = document.getElementById('joke-title');
@@ -32,7 +28,6 @@ function handleJoke(joke) {
     let dateObj = new Date(joke['year'], joke['month'], joke['day']);
 
     joke_title.textContent = title;
-    joke_title.style.display = 'block';
     joke_image.src = image;
     joke_image.style.display = 'block';
     laughing.style.display = 'block';
@@ -41,7 +36,9 @@ function handleJoke(joke) {
 }
 
 getJokeBtn.addEventListener('click', async function (e) {
+    joke_title.style.display = 'block';
     joke_title.textContent = 'Loading...';
-    fetchJokeId().then(fetchJoke).then(handleJoke);
+    let joke_id = await fetchJokeId().then()
+    const joke = await fetchJoke(joke_id);
+    handleJoke(joke);
 });
-
