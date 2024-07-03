@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#my-photo {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 150px;
+
+    /* centering the image */
+    display: block;
+    margin: 0 auto;
+}
+
+.heading {
+    padding-left: 5em;
+}
+
+.text {
+    font-size: large;
+    padding-left: 3em;
+}
+
+#beginning {
+    background-color: antiquewhite;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+#middle {
+    background-color: honeydew;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.images {
+    width: 400px;
+    height: 250px;
+    padding-left: 4em;
+}
+
+#footer-links {
+    display: flex;
+}

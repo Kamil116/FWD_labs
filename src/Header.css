@@ -1,3 +1,11 @@
+#beginning {
+    background-color: antiquewhite;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
@@ -9,7 +17,7 @@
 
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.topnav p {
     margin-left: 10px;
     color: #f2f2f2;
     text-decoration: none;

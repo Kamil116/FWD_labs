@@ -20,8 +20,24 @@ body {
 }
 
 #main-content {
-    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.joke_title_before, .joke_image_before, .joke_text_before, .laughing_guy_before, .joke_date_before {
+    display: none;
+}
+
+.joke_title_after, .joke_image_after, .joke_text_after, .laughing_guy_after, .joke_date_after {
+    display: block;
+}
+
+.joke_date_after {
+    color: green;
+}
+
+.joke_date_after, .joke_text_after {
+    text-align: center;
+}
+
