@@ -6,14 +6,14 @@ import styles from './page.module.css'
 
 function Jokes() {
     const [jokeTitleClass, setJokeTitleClass] = useState(
-        styles.joke_title_before,
+        styles.joke_title_before
     )
     const [jokeImageClass, setJokeImageClass] = useState(
-        styles.joke_image_before,
+        styles.joke_image_before
     )
     const [jokeTextClass, setJokeTextClass] = useState(styles.joke_text_before)
     const [laughingGuyClass, setLaughingGuyClass] = useState(
-        styles.laughing_guy_before,
+        styles.laughing_guy_before
     )
     const [jokeDateClass, setJokeDateClass] = useState(styles.joke_date_before)
     const [jokeImageSource, setJokeImageSource] = useState('')
@@ -30,9 +30,9 @@ function Jokes() {
         async function fetchJokeId(): Promise<JokeIdResponse> {
             const params = new URLSearchParams()
             params.append('email', 'k.mirgasimov@innopolis.university')
-            return await fetch(
-                'https://fwd.innopolis.university/api/hw2?' + params.toString(),
-            ).then(r => r.json()) as Promise<JokeIdResponse>
+            return (await fetch(
+                'https://fwd.innopolis.university/api/hw2?' + params.toString()
+            ).then((r) => r.json())) as Promise<JokeIdResponse>
         }
 
         // Using the obtained identifier to request the comic from the API.
@@ -41,8 +41,8 @@ function Jokes() {
             params.append('id', String(joke_id))
             return fetch(
                 'https://fwd.innopolis.university/api/comic?' +
-                params.toString(),
-            ).then(r => r.json()) as Promise<Joke>
+                    params.toString()
+            ).then((r) => r.json()) as Promise<Joke>
         }
 
         // Displaying the comic image, the title and the date.
@@ -52,7 +52,7 @@ function Jokes() {
             const dateObj: Date = new Date(
                 Number(joke['year']),
                 Number(joke['month']),
-                Number(joke['day']),
+                Number(joke['day'])
             )
 
             setJokeTitleText(title)
@@ -62,8 +62,8 @@ function Jokes() {
 
             setJokeDateText(
                 'The comic was released ' +
-                differenceInDays(new Date(), dateObj) +
-                ' days ago',
+                    differenceInDays(new Date(), dateObj) +
+                    ' days ago'
             )
             setJokeDateClass(styles.joke_date_after)
 
@@ -99,7 +99,10 @@ function Jokes() {
                     <h1 style={{ paddingTop: '1em' }}>Jokes</h1>
                 </div>
                 <div>
-                    <button className={styles.getJokeBtn} onClick={handleButtonClick}>
+                    <button
+                        className={styles.getJokeBtn}
+                        onClick={handleButtonClick}
+                    >
                         Get a joke
                     </button>
                 </div>
