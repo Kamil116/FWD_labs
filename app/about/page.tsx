@@ -7,7 +7,7 @@ function AboutMe() {
             <div className={styles.beginning}>
                 <h1 style={{textAlign: "center"}}>Kamil Mirgasimov</h1>
                 <Image className={styles.my_photo} src="/my_photo.jpg" alt="my-photo"
-                       width={150} height={500}>
+                       width={150} height={150}>
                 </Image>
             </div>
 

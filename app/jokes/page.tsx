@@ -64,11 +64,8 @@ function Jokes() {
             year: string
         }
 
-        // joke_title_style = {
-        //     display: 'block'
-        // }
-        setJokeTitleText('Loading...');
         setJokeTitleClass('joke_title_after');
+        setJokeTitleText('Loading...');
         const joke_id: number = await fetchJokeId().then();
         const joke: Joke = await fetchJoke(joke_id);
         handleJoke(joke);
@@ -78,7 +75,7 @@ function Jokes() {
         <>
             <div className={styles.main_content}>
                 <div>
-                    <h1>Jokes</h1>
+                    <h1 style={{paddingTop: "1em"}}>Jokes</h1>
                 </div>
                 <div>
                     <button className={styles.getJokeBtn} onClick={getJoke}>Get a joke</button>
