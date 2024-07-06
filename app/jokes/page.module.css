@@ -28,12 +28,9 @@
 
 .joke_title_after, .joke_image_after, .joke_text_after, .laughing_guy_after, .joke_date_after {
     display: block;
-    /*padding-top: 1em*/
+    padding-top: 1em
 }
 
-.joke_title_after {
-    margin: 10px 10px;
-}
 
 .joke_date_after {
     color: green;
