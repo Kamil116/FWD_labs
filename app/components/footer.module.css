@@ -1,0 +1,21 @@
+.ending {
+    background-color: lavender;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.footer_links {
+    display: flex;
+}
+
+.gh_link, .email, .tg_link {
+    width: 80px;
+}
+
+.gh_link, .email {
+    margin-left: 30px;
+}
+
+.tg_link {
+    border-radius: 50%;
+}
