@@ -32,7 +32,7 @@ function AboutMe() {
                     </li>
                     <li><a href="https://github.com/Kamil116/liceyproject">Web-site</a> for storing passwords</li>
                 </ul>
-                <Image width={300} height={500} src="/FilmsApllication_screenshot.png"
+                <Image width={500} height={500} src="/FilmsApllication_screenshot.png"
                        alt="My iOS project" className={styles.images}></Image>
                 <hr/>
 
