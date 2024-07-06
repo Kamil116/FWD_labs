@@ -13,11 +13,14 @@
     display: flex;
 }
 
-.gh_link, .email, .tg_link {
+.gh_link,
+.email,
+.tg_link {
     width: 80px;
 }
 
-.gh_link, .email {
+.gh_link,
+.email {
     margin-left: 30px;
 }
 

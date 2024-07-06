@@ -2,7 +2,7 @@
     margin-top: 30px;
     margin-bottom: 50px;
     font-size: 24px;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     box-shadow: darkgray 2px 2px 2px 2px;
     border-radius: 10px;
     border: none;
@@ -21,22 +21,29 @@
     background-color: steelblue;
 }
 
-.joke_title_before, .joke_image_before, .joke_text_before, .laughing_guy_before, .joke_date_before {
+.joke_title_before,
+.joke_image_before,
+.joke_text_before,
+.laughing_guy_before,
+.joke_date_before {
     display: none;
-    padding-top: 1em
+    padding-top: 1em;
 }
 
-.joke_title_after, .joke_image_after, .joke_text_after, .laughing_guy_after, .joke_date_after {
+.joke_title_after,
+.joke_image_after,
+.joke_text_after,
+.laughing_guy_after,
+.joke_date_after {
     display: block;
-    padding-top: 1em
+    padding-top: 1em;
 }
-
 
 .joke_date_after {
     color: green;
 }
 
-.joke_date_after, .joke_text_after {
+.joke_date_after,
+.joke_text_after {
     text-align: center;
 }
-
