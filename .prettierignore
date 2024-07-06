@@ -1,7 +1,5 @@
 node_modules
 .next
-.husky
-coverage
 next.config.mjs
 .prettierignore
 .stylelintignore
