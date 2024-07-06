@@ -1,24 +1,27 @@
-import styles from '../styles/'
+import styles from './page.module.css'
 import Image from 'next/image'
 
 function AboutMe() {
     return (
         <>
-            <div id="beginning">
+            <div className={styles.beginning}>
                 <h1 style={{textAlign: "center"}}>Kamil Mirgasimov</h1>
-                <Image id="my-photo" src="/my_photo.jpg" alt="my-photo"></Image>
+                <Image className={styles.my_photo} src="/my_photo.jpg" alt="my-photo"
+                       width={150} height={150}>
+                </Image>
             </div>
 
-            <div id="middle">
-                <h1 className="heading">Hi there!</h1>
-                <p className="text">I am second year bachelor student at <a href="https://innopolis.university">Innopolis
+            <div className={styles.middle}>
+                <h1 className={styles.heading}>Hi there!</h1>
+                <p className={styles.text}>I am second year bachelor student at <a href="https://innopolis.university">Innopolis
                     university</a>
                 </p>
-                <Image src="/innopolis.jpeg" className="images" alt="image of the Innopolis university"></Image>
+                <Image width={0} height={0} src="/innopolis.jpeg" className={styles.images}
+                       alt="image of the Innopolis university"></Image>
                 <hr/>
 
-                <h1 className="heading">List of my projects</h1>
-                <ul className="text">
+                <h1 className={styles.heading}>List of my projects</h1>
+                <ul className={styles.text}>
                     <li><a href='https://github.com/Kamil116/FilmsApplication'>Films application.</a> Main functionality
                         is to fetch
                         information about films.
@@ -29,11 +32,12 @@ function AboutMe() {
                     </li>
                     <li><a href="https://github.com/Kamil116/liceyproject">Web-site</a> for storing passwords</li>
                 </ul>
-                <Image src="/FilmsApllication_screenshot.png" alt="My iOS project" className="images"></Image>
+                <Image width={0} height={0} src="/FilmsApllication_screenshot.png"
+                       alt="My iOS project" className={styles.images}></Image>
                 <hr/>
 
-                <h1 className="heading">Skills</h1>
-                <ul className="text">
+                <h1 className={styles.heading}>Skills</h1>
+                <ul className={styles.text}>
                     <li>Programming languages:
                         <ul>
                             <li>Python (web, telegram bots development + a little bit of ML)</li>
@@ -48,8 +52,10 @@ function AboutMe() {
                     </li>
 
                 </ul>
-                <Image src="/Python-logopng.png" className="images" alt="Python logo"></Image>
-                <Image src="/swift-svgrepo-com.svg" className="images" alt="Swift logo"></Image>
+                <Image width={0} height={0} src="/Python-logopng.png" className={styles.images}
+                       alt="Python logo"></Image>
+                <Image width={0} height={0} src="/swift-svgrepo-com.svg" className={styles.images}
+                       alt="Swift logo"></Image>
                 <hr/>
             </div>
         </>
