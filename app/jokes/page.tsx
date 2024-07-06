@@ -1,13 +1,15 @@
-import './Jokes.css'
+"use client";
+
 import {differenceInDays} from 'date-fns';
 import {useState} from "react";
+import styles from './page.module.css'
 
 function Jokes() {
-    const [jokeTitleClass, setJokeTitleClass] = useState('joke_title_before');
-    const [jokeImageClass, setJokeImageClass] = useState('joke_image_before');
-    const [jokeTextClass, setJokeTextClass] = useState('joke_text_before');
-    const [laughingGuyClass, setLaughingGuyClass] = useState('laughing_guy_before');
-    const [jokeDateClass, setJokeDateClass] = useState('joke_date_before');
+    const [jokeTitleClass, setJokeTitleClass] = useState(styles.joke_title_before);
+    const [jokeImageClass, setJokeImageClass] = useState(styles.joke_image_before);
+    const [jokeTextClass, setJokeTextClass] = useState(styles.joke_text_before);
+    const [laughingGuyClass, setLaughingGuyClass] = useState(styles.laughing_guy_before);
+    const [jokeDateClass, setJokeDateClass] = useState(styles.joke_date_before);
     const [jokeImageSource, setJokeImageSource] = useState('');
     const [jokeTitleText, setJokeTitleText] = useState('');
     const [jokeTextText, setJokeTextText] = useState('');
@@ -42,16 +44,16 @@ function Jokes() {
 
             setJokeTitleText(title);
 
-            setJokeImageClass('joke_image_after');
+            setJokeImageClass(styles.joke_image_after);
             setJokeImageSource(image);
 
             setJokeDateText('The comic was released ' + differenceInDays(new Date(), dateObj) + ' days ago');
-            setJokeDateClass('joke_date_after');
+            setJokeDateClass(styles.joke_date_after);
 
-            setLaughingGuyClass('laughing_guy_after');
+            setLaughingGuyClass(styles.laughing_guy_after);
 
             setJokeTextText('Date: ' + dateObj.toLocaleDateString());
-            setJokeTextClass('joke_text_after');
+            setJokeTextClass(styles.joke_text_after);
         }
 
         interface Joke {
@@ -74,18 +76,18 @@ function Jokes() {
 
     return (
         <>
-            <div id="main-content">
+            <div className={styles.main_content}>
                 <div>
                     <h1>Jokes</h1>
                 </div>
                 <div>
-                    <button id="get-joke-btn" onClick={getJoke}>Get a joke</button>
+                    <button className={styles.getJokeBtn} onClick={getJoke}>Get a joke</button>
                 </div>
                 <div>
-                    <h3 id="joke-title" className={jokeTitleClass}>{jokeTitleText}</h3>
+                    <h3 className={`${jokeTitleClass} ${styles.jokeTitle}`}>{jokeTitleText}</h3>
                 </div>
                 <div>
-                    <img id="joke_image" alt="joke" src={jokeImageSource} className={jokeImageClass}/>
+                    <img alt="joke" src={jokeImageSource} className={jokeImageClass}/>
                     <h2 id="joke_text" className={jokeTextClass}>{jokeTextText}</h2>
                     <h3 id="joke-date" className={jokeDateClass}>{jokeDateText}</h3>
                 </div>

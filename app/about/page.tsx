@@ -7,7 +7,7 @@ function AboutMe() {
             <div className={styles.beginning}>
                 <h1 style={{textAlign: "center"}}>Kamil Mirgasimov</h1>
                 <Image className={styles.my_photo} src="/my_photo.jpg" alt="my-photo"
-                       width={150} height={150}>
+                       width={150} height={500}>
                 </Image>
             </div>
 
@@ -16,7 +16,7 @@ function AboutMe() {
                 <p className={styles.text}>I am second year bachelor student at <a href="https://innopolis.university">Innopolis
                     university</a>
                 </p>
-                <Image width={0} height={0} src="/innopolis.jpeg" className={styles.images}
+                <Image width={500} height={500} src="/innopolis.jpeg" className={styles.images}
                        alt="image of the Innopolis university"></Image>
                 <hr/>
 
@@ -32,7 +32,7 @@ function AboutMe() {
                     </li>
                     <li><a href="https://github.com/Kamil116/liceyproject">Web-site</a> for storing passwords</li>
                 </ul>
-                <Image width={0} height={0} src="/FilmsApllication_screenshot.png"
+                <Image width={300} height={500} src="/FilmsApllication_screenshot.png"
                        alt="My iOS project" className={styles.images}></Image>
                 <hr/>
 
@@ -52,9 +52,9 @@ function AboutMe() {
                     </li>
 
                 </ul>
-                <Image width={0} height={0} src="/Python-logopng.png" className={styles.images}
+                <Image width={500} height={500} src="/Python-logopng.png" className={styles.images}
                        alt="Python logo"></Image>
-                <Image width={0} height={0} src="/swift-svgrepo-com.svg" className={styles.images}
+                <Image width={500} height={500} src="/swift-svgrepo-com.svg" className={styles.images}
                        alt="Swift logo"></Image>
                 <hr/>
             </div>
