@@ -1,5 +1,3 @@
-'use client'
-
 import { differenceInDays } from 'date-fns'
 import { useState } from 'react'
 import styles from './index.module.css'
@@ -16,9 +14,6 @@ interface JokeObject {
     joke: Joke
 }
 
-interface JokeProps {
-    props: JokeObject
-}
 
 export async function getServerSideProps() {
     interface JokeIdResponse {
@@ -35,10 +30,10 @@ export async function getServerSideProps() {
     }
 
     // Using the obtained identifier to request the comic from the API.
-    function fetchJoke(joke_id: number): Promise<Joke> {
+    async function fetchJoke(joke_id: number): Promise<Joke> {
         const params = new URLSearchParams()
         params.append('id', String(joke_id))
-        return fetch(
+        return await fetch(
             'https://fwd.innopolis.university/api/comic?' +
             params.toString(),
         ).then((r) => r.json()) as Promise<Joke>
@@ -53,7 +48,7 @@ export async function getServerSideProps() {
     }
 }
 
-function Jokes({ props }: JokeProps) {
+function Jokes({ joke }: JokeObject) {
     const [jokeTitleClass, setJokeTitleClass] = useState(
         styles.joke_title_before,
     )
@@ -99,17 +94,9 @@ function Jokes({ props }: JokeProps) {
             setJokeTextClass(styles.joke_text_after)
         }
 
-        interface Joke {
-            safe_title: string
-            img: string
-            day: string
-            month: string
-            year: string
-        }
-
         setJokeTitleClass('joke_title_after')
         setJokeTitleText('Loading...')
-        handleJoke(props.joke)
+        handleJoke(joke)
     }
 
     function handleButtonClick(): void {
