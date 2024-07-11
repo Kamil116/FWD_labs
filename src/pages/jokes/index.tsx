@@ -14,7 +14,6 @@ interface JokeObject {
     joke: Joke
 }
 
-
 export async function getServerSideProps() {
     interface JokeIdResponse {
         jokeId: number
@@ -25,7 +24,7 @@ export async function getServerSideProps() {
         const params = new URLSearchParams()
         params.append('email', 'k.mirgasimov@innopolis.university')
         return (await fetch(
-            'https://fwd.innopolis.university/api/hw2?' + params.toString(),
+            'https://fwd.innopolis.university/api/hw2?' + params.toString()
         ).then((r) => r.json())) as Promise<JokeIdResponse>
     }
 
@@ -33,10 +32,9 @@ export async function getServerSideProps() {
     async function fetchJoke(joke_id: number): Promise<Joke> {
         const params = new URLSearchParams()
         params.append('id', String(joke_id))
-        return await fetch(
-            'https://fwd.innopolis.university/api/comic?' +
-            params.toString(),
-        ).then((r) => r.json()) as Promise<Joke>
+        return (await fetch(
+            'https://fwd.innopolis.university/api/comic?' + params.toString()
+        ).then((r) => r.json())) as Promise<Joke>
     }
 
     const joke_id: number = await fetchJokeId().then()
@@ -50,14 +48,14 @@ export async function getServerSideProps() {
 
 function Jokes({ joke }: JokeObject) {
     const [jokeTitleClass, setJokeTitleClass] = useState(
-        styles.joke_title_before,
+        styles.joke_title_before
     )
     const [jokeImageClass, setJokeImageClass] = useState(
-        styles.joke_image_before,
+        styles.joke_image_before
     )
     const [jokeTextClass, setJokeTextClass] = useState(styles.joke_text_before)
     const [laughingGuyClass, setLaughingGuyClass] = useState(
-        styles.laughing_guy_before,
+        styles.laughing_guy_before
     )
     const [jokeDateClass, setJokeDateClass] = useState(styles.joke_date_before)
     const [jokeImageSource, setJokeImageSource] = useState('')
@@ -73,7 +71,7 @@ function Jokes({ joke }: JokeObject) {
             const dateObj: Date = new Date(
                 Number(joke['year']),
                 Number(joke['month']),
-                Number(joke['day']),
+                Number(joke['day'])
             )
 
             setJokeTitleText(title)
@@ -83,8 +81,8 @@ function Jokes({ joke }: JokeObject) {
 
             setJokeDateText(
                 'The comic was released ' +
-                differenceInDays(new Date(), dateObj) +
-                ' days ago',
+                    differenceInDays(new Date(), dateObj) +
+                    ' days ago'
             )
             setJokeDateClass(styles.joke_date_after)
 
