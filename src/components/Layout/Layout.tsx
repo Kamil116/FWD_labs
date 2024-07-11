@@ -16,12 +16,10 @@ export default function Layout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
-            <body className={inter.className} style={{ margin: 0 }}>
+            <div className={inter.className} style={{ margin: 0 }}>
                 <Header />
                 {children}
                 <Footer />
-            </body>
-        </html>
+            </div>
     )
 }
