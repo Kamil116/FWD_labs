@@ -2,18 +2,67 @@
 
 import { differenceInDays } from 'date-fns'
 import { useState } from 'react'
-import styles from './page.module.css'
+import styles from './index.module.css'
 
-function Jokes() {
+interface Joke {
+    safe_title: string
+    img: string
+    day: string
+    month: string
+    year: string
+}
+
+interface JokeObject {
+    joke: Joke
+}
+
+interface JokeProps {
+    props: JokeObject
+}
+
+export async function getServerSideProps() {
+    interface JokeIdResponse {
+        jokeId: number
+    }
+
+    // Fetching the XKCD comic identifier using the email query parameter.
+    async function fetchJokeId(): Promise<JokeIdResponse> {
+        const params = new URLSearchParams()
+        params.append('email', 'k.mirgasimov@innopolis.university')
+        return (await fetch(
+            'https://fwd.innopolis.university/api/hw2?' + params.toString(),
+        ).then((r) => r.json())) as Promise<JokeIdResponse>
+    }
+
+    // Using the obtained identifier to request the comic from the API.
+    function fetchJoke(joke_id: number): Promise<Joke> {
+        const params = new URLSearchParams()
+        params.append('id', String(joke_id))
+        return fetch(
+            'https://fwd.innopolis.university/api/comic?' +
+            params.toString(),
+        ).then((r) => r.json()) as Promise<Joke>
+    }
+
+    const joke_id: number = await fetchJokeId().then()
+    const my_joke: Joke = await fetchJoke(joke_id)
+    return {
+        props: {
+            joke: my_joke,
+        },
+    }
+}
+
+function Jokes({ props }: JokeProps) {
     const [jokeTitleClass, setJokeTitleClass] = useState(
-        styles.joke_title_before
+        styles.joke_title_before,
     )
     const [jokeImageClass, setJokeImageClass] = useState(
-        styles.joke_image_before
+        styles.joke_image_before,
     )
     const [jokeTextClass, setJokeTextClass] = useState(styles.joke_text_before)
     const [laughingGuyClass, setLaughingGuyClass] = useState(
-        styles.laughing_guy_before
+        styles.laughing_guy_before,
     )
     const [jokeDateClass, setJokeDateClass] = useState(styles.joke_date_before)
     const [jokeImageSource, setJokeImageSource] = useState('')
@@ -21,30 +70,7 @@ function Jokes() {
     const [jokeTextText, setJokeTextText] = useState('')
     const [jokeDateText, setJokeDateText] = useState('')
 
-    async function getJoke() {
-        interface JokeIdResponse {
-            jokeId: number
-        }
-
-        // Fetching the XKCD comic identifier using the email query parameter.
-        async function fetchJokeId(): Promise<JokeIdResponse> {
-            const params = new URLSearchParams()
-            params.append('email', 'k.mirgasimov@innopolis.university')
-            return (await fetch(
-                'https://fwd.innopolis.university/api/hw2?' + params.toString()
-            ).then((r) => r.json())) as Promise<JokeIdResponse>
-        }
-
-        // Using the obtained identifier to request the comic from the API.
-        function fetchJoke(joke_id: number): Promise<Joke> {
-            const params = new URLSearchParams()
-            params.append('id', String(joke_id))
-            return fetch(
-                'https://fwd.innopolis.university/api/comic?' +
-                    params.toString()
-            ).then((r) => r.json()) as Promise<Joke>
-        }
-
+    function getJoke() {
         // Displaying the comic image, the title and the date.
         function handleJoke(joke: Joke): void {
             const image: string = joke.img
@@ -52,7 +78,7 @@ function Jokes() {
             const dateObj: Date = new Date(
                 Number(joke['year']),
                 Number(joke['month']),
-                Number(joke['day'])
+                Number(joke['day']),
             )
 
             setJokeTitleText(title)
@@ -62,8 +88,8 @@ function Jokes() {
 
             setJokeDateText(
                 'The comic was released ' +
-                    differenceInDays(new Date(), dateObj) +
-                    ' days ago'
+                differenceInDays(new Date(), dateObj) +
+                ' days ago',
             )
             setJokeDateClass(styles.joke_date_after)
 
@@ -83,9 +109,7 @@ function Jokes() {
 
         setJokeTitleClass('joke_title_after')
         setJokeTitleText('Loading...')
-        const joke_id: number = await fetchJokeId().then()
-        const joke: Joke = await fetchJoke(joke_id)
-        handleJoke(joke)
+        handleJoke(props.joke)
     }
 
     function handleButtonClick(): void {
