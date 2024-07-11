@@ -1,9 +1,14 @@
 import styles from './index.module.css'
 import Image from 'next/image'
+import Head from 'next/head'
 
 function AboutMe() {
     return (
         <>
+            <Head>
+                <title>About me</title>
+                <meta name="description" content="Learn more about me" />
+            </Head>
             <div className={styles.beginning}>
                 <h1 style={{ textAlign: 'center' }}>Kamil Mirgasimov</h1>
                 <Image

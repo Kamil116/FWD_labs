@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,15 +12,22 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({
-    children,
-}: Readonly<{
+                                   children,
+                               }: Readonly<{
     children: React.ReactNode
 }>) {
     return (
-        <div className={inter.className} style={{ margin: 0 }}>
-            <Header />
-            {children}
-            <Footer />
-        </div>
+        <>
+            <Head>
+                <link rel="icon" href="/portfolio-svgrepo-com.svg" />
+                <meta name="author" content="Kamil Mirgasimov" />
+            </Head>
+            <div className={inter.className} style={{ margin: 0 }}>
+                <Header />
+                {children}
+                <Footer />
+            </div>
+        </>
+
     )
 }
